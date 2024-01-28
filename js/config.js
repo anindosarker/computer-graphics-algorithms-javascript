@@ -1,13 +1,13 @@
 import { displayDrawings } from "./display";
+import { drawGrid } from "./gird";
 
 let context = null;
 let step = 20;
+let gridVisible = false; // Grid is initially visible
 
 export function setupCanvas(element) {
   context = element.getContext("2d");
-  drawGrid(context, step); // Draw a grid with a step of 50 pixels
-
-  displayDrawings();
+  toggleGrid();
 }
 
 export function setPixel(x, y) {
@@ -23,32 +23,17 @@ export function setPixel(x, y) {
   context.fillRect(actualX, actualY, step, step);
 }
 
-function drawGrid(context, step) {
-  const width = context.canvas.width;
-  const height = context.canvas.height;
-
-  context.strokeStyle = "lightgray";
-  context.lineWidth = 0.5;
-
-  // Draw vertical lines
-  for (let x = 0; x < width; x += step) {
-    context.beginPath();
-    context.moveTo(x, 0);
-    context.lineTo(x, height);
-    context.stroke();
-
-    // Label the x coordinate
-    context.fillText(x / step, x, 10);
+export function toggleGrid() {
+  if (gridVisible) {
+    // Clear the canvas if the grid is currently visible
+    context.clearRect(0, 0, context.canvas.width, context.canvas.height);
+    displayDrawings();
+  } else {
+    // Draw the grid if it's not currently visible
+    drawGrid(context, step);
+    displayDrawings();
   }
 
-  // Draw horizontal lines
-  for (let y = 0; y < height; y += step) {
-    context.beginPath();
-    context.moveTo(0, y);
-    context.lineTo(width, y);
-    context.stroke();
-
-    // Label the y coordinate
-    context.fillText(y / step, 0, y);
-  }
+  // Toggle the gridVisible flag
+  gridVisible = !gridVisible;
 }

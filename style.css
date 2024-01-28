@@ -85,8 +85,8 @@ button:focus-visible {
 .myCanvas {
   border: blue 2px dashed;
   padding: 2em;
-  /* width: 80vh;
-  height: 80vh; */
+  /* width: 70vh;
+  height: 70vh; */
 }
 
 @media (prefers-color-scheme: light) {
