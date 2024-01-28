@@ -1,3 +1,4 @@
+import { ddaLine } from "./algorithms/dda-line";
 import { drawLine } from "./algorithms/line";
 
 export function displayDrawings() {
@@ -13,9 +14,15 @@ export function displayDrawings() {
   //   drawLine(550, 120, 670, 120);
   //   drawLine(550, 240, 670, 240);
 
-  drawLine(10, 5, 10, 20);
-  drawLine(20, 5, 20, 20);
-  drawLine(15, 5, 15, 20);
-  drawLine(10, 5, 20, 5);
-  drawLine(10, 20, 20, 20);
+  //   drawLine(10, 5, 10, 20);
+  //   drawLine(20, 5, 20, 20);
+  //   drawLine(15, 5, 15, 20);
+  //   drawLine(10, 5, 20, 5);
+  //   drawLine(10, 20, 20, 20);
+
+  //   ddaLine(0, 0, 10, 10);
+//   drawLine(0, 0, 10, 10);
+
+  ddaLine(10, 10, 0, 0);
+  //   drawLine(10, 20, 0, 0);
 }

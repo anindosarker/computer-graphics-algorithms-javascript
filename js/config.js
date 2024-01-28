@@ -11,6 +11,7 @@ export function setupCanvas(element) {
 }
 
 export function setPixel(x, y) {
+  console.log("🚀 ~ setPixel ~ x, y:\n", x, y);
   if (!context) {
     throw new Error("Canvas context is not set up. Call setupCanvas first.");
   }
@@ -21,6 +22,7 @@ export function setPixel(x, y) {
   // Draw the "pixel"
   context.fillStyle = "black";
   context.fillRect(actualX, actualY, step, step);
+  // context.fillRect(x, y, 1, 1);
 }
 
 export function toggleGrid() {
