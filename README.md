@@ -98,6 +98,15 @@ export function drawLine(x0, y0, x1, y1) {
 }
 ```
 
+## Modifying the grid and pixel size
+
+- You can modify how many pixels are rendered on the canvas by changing the `GRID_STEP` variable in the `config.js` file. The default value is 50.
+
+- > **Note:** If you change the `GRID_STEP` value, it will affect the size of the pixels and the number of pixels that can be rendered on the canvas. For larger images, use a smaller value.
+
+- You can toggle the grid off by clicking the `Toggle Grid` button.
+  ![toggleGrid](public/toggleGrid.png)
+
 ## Drawing on the canvas
 
 In the `display.js` file, call each algorithm with the coordinates and draw the pixels.
@@ -115,14 +124,71 @@ export function displayDrawings() {
 
 ![lines-with-lables](public/lines-with-lables.png)
 
-## Modifying the grid and pixel size
+## Example of a complex drawing
 
-- You can modify how many pixels are rendered on the canvas by changing the `GRID_STEP` variable in the `config.js` file. The default value is 50.
+For this example, some initial edits have been made.
 
-- > **Note:** If you change the `GRID_STEP` value, it will affect the size of the pixels and the number of pixels that can be rendered on the canvas. For larger images, use a smaller value.
+- The grid has been turned off.
+- The pixel size has been reduced to 10. `GRID_STEP = 10`
+- Use `context.fillRect(x, y, 1, 1);` for drawing pixels instead of `context.fillRect(actualX, actualY, GRID_STEP, GRID_STEP);`
 
-- You can toggle the grid off by clicking the `Toggle Grid` button.
-![toggleGrid](public/toggleGrid.png)
+Modify these 3 lines in the `config.js` file:
+
+```js
+let GRID_STEP = 10; // --- CHANGE this value to 10 ---
+
+export function setPixel(x, y) {
+  // --- Comment this line ---
+  // context.fillRect(actualX, actualY, GRID_STEP, GRID_STEP);
+
+  // --- Uncomment this line ---
+  context.fillRect(x, y, 1, 1);
+}
+```
+
+- Then add the drawing in the `display.js` file:
+
+```js
+import { bresenhamCircle } from "./algorithms/bresenham-circle";
+import { drawLine } from "./algorithms/line";
+import { drawLineDashed } from "./algorithms/linedashed";
+
+export function displayDrawings() {
+  // Problem 1
+
+  drawLine(0, 400, 800, 400); // ok
+  drawLine(100, 500, 700, 500); //ok bottom line
+  drawLineDashed(50, 450, 750, 450); //ok middle dash
+  drawLineDashed(0, 400, 50, 450); //ok left dash
+  drawLine(50, 450, 100, 500); //ok left line \
+  drawLineDashed(800, 400, 750, 450); // ok right dash
+  drawLine(750, 450, 700, 500); // ok right line /
+
+  drawLine(100, 400, 100, 100); // |-
+  drawLine(200, 400, 200, 100); // -|
+  drawLine(100, 100, 200, 100); //
+
+  drawLine(600, 400, 600, 100); // |-
+  drawLine(700, 400, 700, 100); // - |
+  drawLine(600, 100, 700, 100); //
+
+  drawLine(300, 205, 300, 100); // |- -
+  drawLine(300, 295, 300, 400); // |- -
+  drawLine(400, 140, 400, 100); // - | -
+  drawLine(400, 360, 400, 400); // - | -
+  drawLine(500, 205, 500, 100); // - - |
+  drawLine(500, 295, 500, 400); // - - |
+
+  drawLine(350, 20, 550, 20); // ok ---
+  drawLine(300, 100, 350, 20); // ok /-
+  drawLine(500, 100, 550, 20); // ok
+  drawLine(400, 100, 450, 20); // ok
+
+  bresenhamCircle(400, 250, 110); // circle ok
+}
+```
+
+![shahid-minar](public/shahid-minar.png)
 
 ## Contributing
 

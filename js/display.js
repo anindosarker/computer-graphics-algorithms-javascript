@@ -7,37 +7,37 @@ import { drawLine } from "./algorithms/line";
 import { drawLineDashed } from "./algorithms/linedashed";
 
 export function displayDrawings() {
-  // // // Problem 1
+  // // Problem 1
 
-  // drawLine(0, 400, 800, 400); // ok
-  // drawLine(100, 500, 700, 500); //ok bottom line
-  // drawLineDashed(50, 450, 750, 450); //ok middle dash
-  // drawLineDashed(0, 400, 50, 450); //ok left dash
-  // drawLine(50, 450, 100, 500); //ok left line \
-  // drawLineDashed(800, 400, 750, 450); // ok right dash
-  // drawLine(750, 450, 700, 500); // ok right line /
+  drawLine(0, 400, 800, 400); // ok
+  drawLine(100, 500, 700, 500); //ok bottom line
+  drawLineDashed(50, 450, 750, 450); //ok middle dash
+  drawLineDashed(0, 400, 50, 450); //ok left dash
+  drawLine(50, 450, 100, 500); //ok left line \
+  drawLineDashed(800, 400, 750, 450); // ok right dash
+  drawLine(750, 450, 700, 500); // ok right line /
 
-  // drawLine(100, 400, 100, 100); // |-
-  // drawLine(200, 400, 200, 100); // -|
-  // drawLine(100, 100, 200, 100); //
+  drawLine(100, 400, 100, 100); // |-
+  drawLine(200, 400, 200, 100); // -|
+  drawLine(100, 100, 200, 100); //
 
-  // drawLine(600, 400, 600, 100); // |-
-  // drawLine(700, 400, 700, 100); // - |
-  // drawLine(600, 100, 700, 100); //
+  drawLine(600, 400, 600, 100); // |-
+  drawLine(700, 400, 700, 100); // - |
+  drawLine(600, 100, 700, 100); //
 
-  // drawLine(300, 205, 300, 100); // |- -
-  // drawLine(300, 295, 300, 400); // |- -
-  // drawLine(400, 140, 400, 100); // - | -
-  // drawLine(400, 360, 400, 400); // - | -
-  // drawLine(500, 205, 500, 100); // - - |
-  // drawLine(500, 295, 500, 400); // - - |
+  drawLine(300, 205, 300, 100); // |- -
+  drawLine(300, 295, 300, 400); // |- -
+  drawLine(400, 140, 400, 100); // - | -
+  drawLine(400, 360, 400, 400); // - | -
+  drawLine(500, 205, 500, 100); // - - |
+  drawLine(500, 295, 500, 400); // - - |
 
-  // drawLine(350, 20, 550, 20); // ok ---
-  // drawLine(300, 100, 350, 20); // ok /-
-  // drawLine(500, 100, 550, 20); // ok
-  // drawLine(400, 100, 450, 20); // ok
+  drawLine(350, 20, 550, 20); // ok ---
+  drawLine(300, 100, 350, 20); // ok /-
+  drawLine(500, 100, 550, 20); // ok
+  drawLine(400, 100, 450, 20); // ok
 
-  // bresenhamCircle(400, 250, 110); // circle ok
+  bresenhamCircle(400, 250, 110); // circle ok
 
   // // // Problem 2
   // // // 1
@@ -69,6 +69,6 @@ export function displayDrawings() {
   // // drawLine(700, 100, 700, 300); // ok ---
   // // drawLine(880, 280, 880, 500); // ok ---
 
-  drawLine(5, 5, 10, 10); // ok
-  drawLine(15, 15, 20, 20); // ok
+  // drawLine(5, 5, 10, 10); // ok
+  // drawLine(15, 15, 20, 20); // ok
 }
