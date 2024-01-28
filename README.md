@@ -143,7 +143,3 @@ Distributed under the MIT License.
 Anindo Sarker - [sarkeranindo@gmail.com](mailto:sarkeranindo@gmail.com)
 
 Project Link: [https://github.com/anindosarker/computer-graphics-algorithms-javascript.git](https://github.com/anindosarker/computer-graphics-algorithms-javascript.git)
-
-```
-
-```
