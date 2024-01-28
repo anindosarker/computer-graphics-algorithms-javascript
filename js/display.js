@@ -1,3 +1,4 @@
+import { bresenhamCircle } from "./algorithms/bresenham-circle";
 import { bresenhamLine } from "./algorithms/bresenham-line";
 import { ddaLine } from "./algorithms/dda-line";
 import { plotPixel } from "./algorithms/gfg";
@@ -24,6 +25,7 @@ export function displayDrawings() {
   // ddaLine(9, 9, 0, 0);
   //   drawLine(10, 20, 0, 0);
   // bresenhamLine(9, 9, 0, 0);
-  bresenhamLine(25, 25, 15, 15);
-  ddaLine(25, 25, 15, 15);
+  // bresenhamLine(25, 25, 15, 15);
+  // ddaLine(25, 25, 15, 15);
+  bresenhamCircle(20, 20, 4);
 }

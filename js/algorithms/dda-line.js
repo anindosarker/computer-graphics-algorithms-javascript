@@ -1,5 +1,5 @@
 import { setLabel, setPixel } from "../config";
-import { round } from "../utils";
+import { ensureInitialLessThanFinal, round } from "../utils";
 
 export function ddaLine(x0, y0, x1, y1) {
   setLabel(x0, y0, `ddaLine(${x0}, ${y0}, ${x1}, ${y1})`);
