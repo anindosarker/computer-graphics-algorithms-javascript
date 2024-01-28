@@ -29,6 +29,8 @@ This project uses Vite for its build system. To run the project, use the followi
  npm run dev
 ```
 
+Then go to [http://localhost:5173/](http://localhost:5173/) to view the project.
+
 ## Usage
 
 ### Folder Structure
@@ -115,9 +117,12 @@ export function displayDrawings() {
 
 ## Modifying the grid and pixel size
 
-You can modify how many pixels are rendered on the canvas by changing the `GRID_STEP` variable in the `config.js` file. The default value is 50.
+- You can modify how many pixels are rendered on the canvas by changing the `GRID_STEP` variable in the `config.js` file. The default value is 50.
 
-> **Note:** If you change the `GRID_STEP` value, it will affect the size of the pixels and the number of pixels that can be rendered on the canvas. For larger images, use a smaller value.
+- > **Note:** If you change the `GRID_STEP` value, it will affect the size of the pixels and the number of pixels that can be rendered on the canvas. For larger images, use a smaller value.
+
+- You can toggle the grid off by clicking the `Toggle Grid` button.
+![toggleGrid](public/toggleGrid.png)
 
 ## Contributing
 
