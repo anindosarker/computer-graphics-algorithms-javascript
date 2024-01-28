@@ -3,13 +3,13 @@ import "./style.css";
 
 document.querySelector("#app").innerHTML = `
   <div>
-    <div class="card">
+    <div class="">
       <p class="read-the-docs">
       Canvas
       </p>
     </div>
    
-    <canvas id="myCanvas" class="myCanvas" width=1200 height=600></canvas>
+    <canvas id="myCanvas" class="myCanvas" width=1000 height=1000></canvas>
   </div>
 `;
 
