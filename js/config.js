@@ -2,7 +2,7 @@ import { displayDrawings } from "./display";
 import { drawGrid } from "./grid";
 
 let context = null;
-let step = 20;
+let step = 10;
 let gridVisible = false; // Grid is initially visible
 
 export function setupCanvas(element) {
@@ -21,8 +21,8 @@ export function setPixel(x, y) {
 
   // Draw the "pixel"
   context.fillStyle = "black";
-  context.fillRect(actualX, actualY, step, step);
-  // context.fillRect(x, y, 1, 1);
+  // context.fillRect(actualX, actualY, step, step);
+  context.fillRect(x, y, 1, 1);
 }
 
 let labels = {}; // Keep track of labels at each pixel

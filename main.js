@@ -7,7 +7,7 @@ document.querySelector("#app").innerHTML = `
       <button id="toggleGrid">Toggle Grid</button>
     </div>
    
-    <canvas id="myCanvas" class="myCanvas" width=1000 height=600></canvas>
+    <canvas id="myCanvas" class="myCanvas" width=1000 height=1000></canvas>
   </div>
 `;
 
