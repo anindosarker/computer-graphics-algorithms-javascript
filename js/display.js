@@ -23,7 +23,7 @@ export function displayDrawings() {
   //   drawLine(0, 0, 10, 10);
   // ddaLine(9, 9, 0, 0);
   //   drawLine(10, 20, 0, 0);
-  bresenhamLine(9, 9, 0, 0);
-  // bresenhamLine(25, 25, 15, 15);
+  // bresenhamLine(9, 9, 0, 0);
+  bresenhamLine(25, 25, 15, 15);
   ddaLine(25, 25, 15, 15);
 }

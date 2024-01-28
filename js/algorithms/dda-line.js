@@ -1,7 +1,9 @@
-import { setPixel } from "../config";
+import { setLabel, setPixel } from "../config";
 import { round } from "../utils";
 
 export function ddaLine(x0, y0, x1, y1) {
+  setLabel(x0, y0, `ddaLine(${x0}, ${y0}, ${x1}, ${y1})`);
+
   let dx = Math.abs(x1 - x0);
   let dy = Math.abs(y1 - y0);
 

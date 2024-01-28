@@ -1,7 +1,8 @@
-import { setPixel } from "../config";
+import { setLabel, setPixel } from "../config";
 import { ensureInitialLessThanFinal } from "../utils";
 
 export function bresenhamLine(x0, y0, x1, y1) {
+  setLabel(x0, y0, `bresenhamLine(${x0}, ${y0}, ${x1}, ${y1})`);
   [x0, y0, x1, y1] = ensureInitialLessThanFinal(x0, y0, x1, y1);
 
   let dx = Math.abs(x1 - x0);

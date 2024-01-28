@@ -1,5 +1,5 @@
 import { displayDrawings } from "./display";
-import { drawGrid } from "./gird";
+import { drawGrid } from "./grid";
 
 let context = null;
 let step = 20;
@@ -23,6 +23,29 @@ export function setPixel(x, y) {
   context.fillStyle = "black";
   context.fillRect(actualX, actualY, step, step);
   // context.fillRect(x, y, 1, 1);
+}
+
+let labels = {}; // Keep track of labels at each pixel
+
+export function setLabel(x, y, label = "") {
+  if (!context) {
+    throw new Error("Canvas context is not set up. Call setupCanvas first.");
+  }
+  // Multiply the x and y coordinates by the step size to get the actual position on the canvas
+  const actualX = x * step;
+  const actualY = y * step;
+
+  // Append to the existing label if there is one
+  const key = `${x},${y}`;
+  if (labels[key]) {
+    labels[key] += ", " + label;
+  } else {
+    labels[key] = label;
+  }
+
+  // Draw the label
+  context.fillStyle = "red";
+  context.fillText(labels[key], actualX + 5, actualY - 5);
 }
 
 export function toggleGrid() {
